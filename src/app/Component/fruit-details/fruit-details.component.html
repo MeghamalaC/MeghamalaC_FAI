@@ -1,0 +1,16 @@
+<div *ngIf="fruDetails.fruitName != null" class="card">
+    <div class="row">
+        <div class="col-md-4">
+            <img [src]="fruDetails.fruitImage" class="card-img" alt="">
+        </div>
+        <div class="col-md-5 card-body card-image-overlay">
+            <h3 class="h3 card-title text-danger">{{fruDetails.fruitName| uppercase}}</h3>
+            <hr>
+            <p class="card-text">Fruit Stock: {{fruDetails.fruitStock}}</p>
+            <p class="card-text">Fruit Price: {{fruDetails.fruitPrice | currency : 'INR'}}</p>
+            <!-- <p class="card-text">
+                <button class="btn btn-danger">Update</button>
+            </p> -->
+        </div>
+    </div>
+</div>

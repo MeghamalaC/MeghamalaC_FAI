@@ -1,0 +1,26 @@
+<div class="container">
+    <span>
+        {{foundFru | json}}
+    </span>
+    <div class="row">
+        <div class="col-md-7">
+            <h2>Details of the Fruit</h2>
+        <hr>
+        <p>
+            Select the File: <input type="file" class="form-control" [(ngModel)]="foundFru.fruitImage"/>
+        </p>  
+        <p>Fruit ID: <input type="text" disabled class="form-control" [(ngModel)]="foundFru.fruitID"></p>
+        <p>Fruit Name:<input type="text" class="form-control" [(ngModel)]="foundFru.fruitName"></p>
+        <p>Fruit Price:<input type="number" class="form-control" [(ngModel)]="foundFru.fruitPrice"></p>
+        <p>Fruit Stock:<input type="number" class="form-control" [(ngModel)]="foundFru.fruitStock"></p>
+        <p>
+            <button class="btn btn-info" (click)="onSubmit()" >Save Changes</button>
+            <button class="btn btn-primary" routerLink="/Fruit/All">
+                <i class="fa fa-arrow-left"></i>
+                Back
+            </button>
+        </p>
+        </div>
+        
+    </div>
+</div>

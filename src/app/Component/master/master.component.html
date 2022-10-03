@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <h2 class="h2">List of Fruits with Us!!!</h2>
+            <div>
+                <input [(ngModel)]="searchValue" placeholder="Search here" type="search" class="form-control m-2"/>
+            </div>
+            <table class="table table-bordered table-primary table-hover border-primary">
+                <thead class="table-dark">
+                <tr>
+                    <th>Fruit ID</th>
+                    <th>Fruit Name</th>
+                    <th>Fruit Price</th>
+                    <th>Fruit Stock</th>
+                    <th>Options</th>
+                </tr>
+                 </thead>
+            <tbody>
+                <tr *ngFor="let fru of fruList | search: searchValue ">
+                    
+                    <td>{{fru.fruitID}}</td>
+                    <td>{{fru.fruitName | uppercase}}</td>
+                    <td>{{fru.fruitPrice}}</td>
+                    <td>{{fru.fruitStock}}</td>
+                    <td>
+                        <button (click)="onDetailClick(fru)" class="btn btn-info">
+                            <i class="fa fa-eye fa-round"></i>
+                            Details
+                        </button>
+
+                        
+
+                    </td>
+
+                    
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        <div class="col-md-5">
+            <app-fruit-details [fruDetails] = selectedFru></app-fruit-details>
+        </div>
+    
+    
+    </div>
+   
+        
+</div>
+
